@@ -1,6 +1,21 @@
 const arr = require("../data");
-
-function getTodos(req, res){
+// CRUD 
+function getTodos(req, res){ // all
     res.send(arr)
 } 
-module.exports = getTodos
+function getTodoById(req, res){ // get one
+    res.send(arr)
+}
+
+function createTodo(req, res){
+    res.send("create")
+} 
+
+function deleteTodo(req, res){
+    res.send("delete")
+} 
+function updateTodo(req, res){
+    res.send(arr)
+} 
+
+module.exports = {getTodos, createTodo, deleteTodo, updateTodo}

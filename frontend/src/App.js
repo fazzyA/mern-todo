@@ -12,15 +12,6 @@ function App() {
       desc
     }
     const resp= await axios.post("http://localhost:5000/todo/add", data)
-    alert(resp.message)
-    // fetch("http://localhost:5000/todo/add", {
-    //   method: "POST",
-    //   body: JSON.stringify(data)
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     console.log(data)
-    //   })
   }
   return (
     <form onSubmit={handleSubmit}>

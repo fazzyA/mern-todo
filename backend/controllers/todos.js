@@ -1,8 +1,10 @@
 const arr = require("../data");
 const Todo = require("../models/todo");
 // CRUD 
-function getTodos(req, res){ // all
-    res.send(arr)
+async function getTodos(req, res){ // all
+    console.log("im in get todos")
+    const resp = await Todo.find()
+    res.send({message: "all todos", status: 200, res: resp})
    
 } 
 function getTodoById(req, res){ // get one

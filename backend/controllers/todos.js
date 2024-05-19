@@ -11,7 +11,7 @@ function getTodoById(req, res){ // get one
 
 async function createTodo(req, res){
     // save todo in database
-    console.log("...", req.body)
+    console.log("...create", req.body)
     const { title, desc } = req.body
     const resp = await Todo.create({
         title: title, 

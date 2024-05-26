@@ -4,7 +4,7 @@ const Todo = require("../models/todo");
 async function getTodos(req, res){ // all
     console.log("im in get todos")
     const resp = await Todo.find()
-    res.send({message: "all todos", status: 200, res: resp})
+    res.send({message: "all todos", status: 200, data: resp})
    
 } 
 function getTodoById(req, res){ // get one

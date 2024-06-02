@@ -26,8 +26,12 @@ async function createTodo(req, res){
 function deleteTodo(req, res){
     res.send("delete")
 } 
-function updateTodo(req, res){
-    res.send(arr)
+async function updateTodo(req, res){
+    console.log("updateTodo", req.body)
+    const { title, desc, _id } = req.body
+    const resp = await Todo.findByIdAndUpdate(_id, {title, desc})
+    console.log(resp)
+    res.send({message: "todo update", status: 200, res: resp})
 } 
 
 module.exports = {getTodos, createTodo, deleteTodo, updateTodo}

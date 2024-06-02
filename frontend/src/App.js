@@ -1,8 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import AddTodo from './AddTodo'
+import EditTodo from './Edittodo'
 
 const App = () => {
   const [todoList, setTodoList] = useState([])
+  const [todo, setTodo] = useState({})
 
   useEffect(() => {
     const res = fetch("http://localhost:5000/todo/")
@@ -15,11 +18,19 @@ const App = () => {
 
   }, [])
 
+  const handleUpdate = (item) =>{
+    setTodo({...item})
+
+  }
+
   return (
-    <div>{todoList.map((item) => (
+    <div>
+      {/* <AddTodo /> */}
+      <EditTodo todo={todo}  />
+      {todoList.map((item) => (
       <>
       <h1>{item.title}</h1>
-      <p>{item.desc}</p>
+      <p>{item.desc} <button onClick={() => handleUpdate(item)}>Edit</button><button>delete</button></p>
       </>
     ))}</div>
   )

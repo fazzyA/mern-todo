@@ -2,10 +2,10 @@
   "name": "mern-todo",
   "version": "1.0.0",
   "description": "",
-  "main": "backend/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon index",
-    "dev": "concurrently \"npm start\" \"cd frontend & npm start\"",
+    "dev": "concurrently \"npm start\" \"cd ../frontend & npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
